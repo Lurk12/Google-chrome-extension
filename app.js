@@ -1,4 +1,4 @@
-require('dotenv').config()
+require("dotenv").config()
 const express = require('express')
 const uploadScreenRecorder= require('./routes/router')
 const app = express()
