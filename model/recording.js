@@ -3,14 +3,13 @@ const mongoose = require('mongoose');
 const recordingSchema = new mongoose.Schema({
     title: {
         type: String, 
-        required: true,
     },
-    description:{
-        filePath:{
-            type :String ,
-        },
-        
-    }
+    videoUrl: {
+        type: String,
+      },
+      filename:{
+        type: String,
+      }
     
 },{timestamps: true})
 

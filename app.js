@@ -5,16 +5,17 @@ const app = express()
 const connectDB = require('./db/connect')
 
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res)=>{
     res.send('File uploads working!, not just on this route!')
 })
 
 
-app.use('/uploads', express.static('uploads'));
 
-
-app.use('/api/v1/screen-record', uploadScreenRecorder); // For the route without an ID
+app.use('/api/upload', uploadScreenRecorder ); 
+app.use('/api/v1/recordings', uploadScreenRecorder)
+app.use('/api/v1/recording', uploadScreenRecorder)
 
 
 const port = process.env.PORT || 3000
